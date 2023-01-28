@@ -1,5 +1,10 @@
-﻿using System;
+﻿using Amazon.Runtime.Internal.Util;
+using IdentityServer3.Core.ViewModels;
+using Microsoft.Build.Framework;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
+using System.EnterpriseServices;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -8,23 +13,47 @@ namespace Portifolio.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Sobre()
         {
-            ViewBag.Message = "Your application description page.";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Projetos()
         {
-            ViewBag.Message = "Your contact page.";
 
             return View();
         }
+
+        public ActionResult Skills()
+        {
+
+            return View();
+        }
+
+        public ActionResult Contato()
+        {
+
+            return View();
+        }
+
+        public ActionResult Jornada()
+        {
+
+            return View();
+        }
+
     }
 }
